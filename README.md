@@ -1,4 +1,4 @@
-# Netflix Movies & TV Shows — Data Analysis
+# Netflix Movies & TV Shows - Data Analysis
 
 Picked this dataset from Kaggle because I was curious 
 about what Netflix's library actually looks like behind 
