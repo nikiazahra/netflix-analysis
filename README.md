@@ -7,26 +7,18 @@ Exploratory data analysis on Netflix Movies and TV Shows dataset using Python
 
 ## Overview
 Exploratory data analysis (EDA) on the Netflix Movies and TV Shows 
-dataset using Python. This project uncovers content trends, popular 
-genres, top producing countries, and rating distributions on Netflix.
+dataset using Python. 
 
 ## Tools & Libraries Used
 - Python 3.10
-- Pandas — data cleaning & analysis
-- Matplotlib — data visualization
-- Seaborn — chart styling
+- Pandas 
+- Matplotlib 
+- Seaborn
 
 ## Dataset
 - **Source:** Kaggle — Netflix Movies and TV Shows
 - **Size:** 8,800+ titles
 - **Features:** title, type, country, date_added, rating, listed_in, etc.
-
-## Key Findings
-- **Movies dominate** Netflix content over TV Shows
-- **United States** is the top content producing country
-- **Dramas and Comedies** are the most popular genres
-- Netflix content **grew significantly** from 2016–2019
-- **TV-MA** is the most common content rating
 
 ## Visualizations
 
