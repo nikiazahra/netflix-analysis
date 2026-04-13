@@ -1,45 +1,50 @@
-# netflix-analysis
-Exploratory data analysis on Netflix Movies and TV Shows dataset using Python
+# Netflix Movies & TV Shows — Data Analysis
 
-# Netflix Movies & TV Shows Analysis – Python
-## Live Portfolio Page
-[View Netflix-Styled Analysis Page](https://nikiazahra.github.io/netflix-analysis)
+Picked this dataset from Kaggle because I was curious 
+about what Netflix's library actually looks like behind 
+the scenes. Did some exploratory analysis using Python 
+to find patterns across 8,800+ titles.
 
-## Overview
-Exploratory data analysis (EDA) on the Netflix Movies and TV Shows 
-dataset using Python. 
+## What I looked at
+- How movies compare to TV shows in terms of volume
+- Which countries produce the most content
+- How Netflix's library has grown over the years
+- Most common genres and content ratings
 
-## Tools & Libraries Used
-- Python 3.10
-- Pandas 
-- Matplotlib 
-- Seaborn
+## What I found
+- Movies make up about 70% of Netflix's catalog
+- The US produces the most content, followed by India and UK
+- Netflix added content aggressively between 2016 and 2019
+- Dramas and Comedies are the top genres
+- Most content is rated TV-MA so it skews toward adult audiences
 
-## Dataset
-- **Source:** Kaggle — Netflix Movies and TV Shows
-- **Size:** 8,800+ titles
-- **Features:** title, type, country, date_added, rating, listed_in, etc.
+## Live Page
+[View the analysis page](https://nikiazahra.github.io/netflix-analysis)
 
-## Visualizations
+## Files
+- `netflix_analysis.py` — main analysis script
+- `chart1_type.png` — movies vs tv shows
+- `chart2_countries.png` — top producing countries
+- `chart3_trend.png` — content growth over time
+- `chart4_genres.png` — top genres
+- `chart5_ratings.png` — rating distribution
+
+## Libraries used
+pandas, matplotlib, seaborn
+
+---
 
 ### Movies vs TV Shows
 ![Chart 1](chart1_type.png)
 
-### Top 10 Countries Producing Netflix Content
+### Top 10 Countries
 ![Chart 2](chart2_countries.png)
 
-### Content Added Over the Years
+### Content Added Over Time
 ![Chart 3](chart3_trend.png)
 
-### Top 10 Genres
+### Top Genres
 ![Chart 4](chart4_genres.png)
 
-### Content Rating Distribution
+### Rating Distribution
 ![Chart 5](chart5_ratings.png)
-
-## Skills Demonstrated
-- Exploratory Data Analysis (EDA)
-- Data cleaning with Pandas
-- Data visualization with Matplotlib & Seaborn
-- Handling missing values
-- String manipulation and data parsing
