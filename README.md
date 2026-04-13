@@ -2,8 +2,8 @@
 Exploratory data analysis on Netflix Movies and TV Shows dataset using Python
 
 # Netflix Movies & TV Shows Analysis – Python
-## 🌐 Live Portfolio Page
-👉 [View Netflix-Styled Analysis Page](https://nikiazahra.github.io/netflix-analysis)
+## Live Portfolio Page
+[View Netflix-Styled Analysis Page](https://nikiazahra.github.io/netflix-analysis)
 
 ## Overview
 Exploratory data analysis (EDA) on the Netflix Movies and TV Shows 
