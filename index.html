@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Analysis – Nikia Zahra</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #141414; font-family: Arial, sans-serif; color: #fff; }
+    .netflix-nav { background: linear-gradient(to bottom, #000 0%, transparent 100%); padding: 16px 48px; display: flex; align-items: center; gap: 32px; }
+    .netflix-logo { color: #E50914; font-size: 28px; font-weight: 900; letter-spacing: -1px; }
+    .hero { background: #141414; padding: 60px 48px 40px; border-bottom: 4px solid #E50914; }
+    .hero-badge { background: #E50914; color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 16px; letter-spacing: 1px; }
+    .hero-title { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.1; }
+    .hero-title span { color: #E50914; }
+    .hero-meta { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+    .hero-meta span { color: #46d369; margin-right: 16px; font-weight: 700; }
+    .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .tag { border: 1px solid #555; color: #ccc; font-size: 12px; padding: 4px 10px; border-radius: 3px; }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-primary { background: #fff; color: #000; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-secondary { background: rgba(109,109,110,0.7); color: #fff; padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+    .section { padding: 32px 48px; }
+    .section-title { color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
+    .stat-card { background: #1f1f1f; border-radius: 4px; padding: 20px; border-left: 3px solid #E50914; }
+    .stat-num { font-size: 28px; font-weight: 900; color: #E50914; }
+    .stat-label { font-size: 12px; color: #aaa; margin-top: 4px; }
+    .charts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px; }
+    .chart-card { background: #1f1f1f; border-radius: 4px; overflow: hidden; }
+    .chart-card-wide { grid-column: span 2; background: #1f1f1f; border-radius: 4px; overflow: hidden; }
+    .chart-img { width: 100%; height: 220px; object-fit: contain; background: #2a2a2a; padding: 12px; }
+    .chart-info { padding: 12px 16px; }
+    .chart-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .chart-desc { font-size: 12px; color: #aaa; }
+    .findings { background: #1f1f1f; border-radius: 4px; padding: 24px; margin-bottom: 40px; }
+    .finding-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #333; }
+    .finding-item:last-child { border-bottom: none; }
+    .finding-dot { width: 8px; height: 8px; background: #E50914; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .finding-text { font-size: 14px; color: #ccc; line-height: 1.6; }
+    .finding-text strong { color: #fff; }
+    .tools-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .tool-pill { background: #2a2a2a; border: 1px solid #444; color: #ccc; padding: 8px 16px; border-radius: 20px; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+    .tool-dot { width: 8px; height: 8px; background: #E50914; border-radius: 50%; }
+    .footer { background: #000; padding: 24px 48px; border-top: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+    .footer-text { color: #555; font-size: 12px; }
+    .github-btn { background: transparent; border: 1px solid #E50914; color: #E50914; padding: 8px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; }
+    @media (max-width: 768px) {
+      .netflix-nav, .hero, .section, .footer { padding-left: 20px; padding-right: 20px; }
+      .hero-title { font-size: 28px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .charts-grid { grid-template-columns: 1fr; }
+      .chart-card-wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <div class="netflix-nav">
+    <div class="netflix-logo">NETFLIX</div>
+    <span style="color:#ccc; font-size:13px;">Data Analysis</span>
+    <span style="color:#ccc; font-size:13px;">Portfolio</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">PORTFOLIO PROJECT</div>
+    <div class="hero-title">Netflix Movies & TV Shows<br><span>Analysis</span></div>
+    <div class="hero-meta">
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>Matplotlib</span>
+      2025 &nbsp;•&nbsp; EDA &nbsp;•&nbsp; 8,800+ titles analyzed
+    </div>
+    <div class="hero-tags">
+      <div class="tag">Data Cleaning</div>
+      <div class="tag">Visualization</div>
+      <div class="tag">Trend Analysis</div>
+      <div class="tag">EDA</div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#findings">&#9654; View Findings</a>
+      <a class="btn-secondary" href="https://github.com/YOUR_USERNAME/netflix-analysis" target="_blank">&#8853; GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="section">
+    <div class="section-title">Key Stats</div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">8,800+</div>
+        <div class="stat-label">Total titles analyzed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">70%</div>
+        <div class="stat-label">Movies vs TV Shows</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">#1</div>
+        <div class="stat-label">United States top producer</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Visualizations created</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="section-title">Visualizations</div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <img class="chart-img" src="chart1_type.png" alt="Movies vs TV Shows"/>
+        <div class="chart-info">
+          <div class="chart-name">Movies vs TV Shows</div>
+          <div class="chart-desc">Content type distribution across Netflix library</div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <img class="chart-img" src="chart2_countries.png" alt="Top 10 Countries"/>
+        <div class="chart-info">
+          <div class="chart-name">Top 10 Countries</div>
+          <div class="chart-desc">Countries producing the most Netflix content</div>
+        </div>
+      </div>
+      <div class="chart-card-wide">
+        <img class="chart-img" style="height:260px;" src="chart3_trend.png" alt="Content Over Time"/>
+        <div class="chart-info">
+          <div class="chart-name">Content Added Over the Years</div>
+          <div class="chart-desc">Netflix content grew significantly from 2016–2019</div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <img class="chart-img" src="chart4_genres.png" alt="Top Genres"/>
+        <div class="chart-info">
+          <div class="chart-name">Top 10 Genres</div>
+          <div class="chart-desc">Most popular content categories on Netflix</div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <img class="chart-img" src="chart5_ratings.png" alt="Ratings Distribution"/>
+        <div class="chart-info">
+          <div class="chart-name">Content Rating Distribution</div>
+          <div class="chart-desc">TV-MA dominates Netflix content ratings</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Findings -->
+    <div class="section-title" id="findings">Key Findings</div>
+    <div class="findings">
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Movies dominate</strong> Netflix content, making up approximately 70% of all titles compared to TV Shows</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>United States</strong> is the top content producing country, followed by India and the United Kingdom</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>Dramas and Comedies</strong> are the most popular genres across the entire Netflix library</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text">Netflix content <strong>grew significantly from 2016–2019</strong>, reflecting its rapid global expansion strategy</div></div>
+      <div class="finding-item"><div class="finding-dot"></div><div class="finding-text"><strong>TV-MA</strong> is the most common content rating, indicating Netflix targets primarily adult audiences</div></div>
+    </div>
+
+    <!-- Tools -->
+    <div class="section-title">Tools Used</div>
+    <div class="tools-row">
+      <div class="tool-pill"><div class="tool-dot"></div>Python 3.10</div>
+      <div class="tool-pill"><div class="tool-dot"></div>Pandas</div>
+      <div class="tool-pill"><div class="tool-dot"></div>Matplotlib</div>
+      <div class="tool-pill"><div class="tool-dot"></div>Seaborn</div>
+      <div class="tool-pill"><div class="tool-dot"></div>Kaggle Dataset</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">Nikia Zahra • Data Analytics Portfolio • 2025</div>
+    <a class="github-btn" href="https://github.com/YOUR_USERNAME/netflix-analysis" target="_blank">View on GitHub ↗</a>
+  </div>
+
+</body>
+</html>
